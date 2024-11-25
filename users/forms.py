@@ -29,4 +29,5 @@ class SignupForm(forms.Form):
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.EmailField(label="Email")
+    email = forms.EmailField(label="Email")
+    password = forms.CharField(min_length=4)

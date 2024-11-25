@@ -1,8 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 
-from users.forms import SignupForm
+from users.forms import SignupForm, LoginForm
 from users.models import User
 
 
@@ -25,9 +24,34 @@ def signup(request):
         return render(request, "users/signup.html", context)
         
 
-class CustomLoginView(LoginView):
-    template_name = 'users/login.html'
-    redirect_authenticated_user = True 
+def login_view(request):
+    if request.user.is_authenticated:
+        return redirect("/start/")
+    
+    if request.method == "POST":
+        form = LoginForm(data=request.POST)
+        
+        if form.is_valid():
+            email=form.cleaned_data["email"]
+            password=form.cleaned_data["password"]
+            
+            user = authenticate(email=email, password=password)
+            
+            if user:
+                login(request, user)
+                return redirect("/start/")
+            
+            else:
+                print("로그인에 실패했습니다.")
+                
+        
+        context = {"form": form}
+        return render(request, "users/login.html", context)
+    
+    else:
+        form = LoginForm()
+        context = {"form": form}
+        return render(request, "users/login.html", context)
     
     
 def logout_view(request):
