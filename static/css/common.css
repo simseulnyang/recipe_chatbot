@@ -1,0 +1,307 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.42rem;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+html {
+  margin: 0;
+  font-family: "Noto Sans KR", serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #333;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	background-color: royalblue;
+	color: white;
+}
+
+.header-banner {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Footer 고정 */
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-top: 1px solid gray;
+	color: white;
+  font-size: 20px;
+}
+
+/* 본문 영역을 header와 footer 사이로 맞추기 */
+main {
+	margin-top: 80px; /* Header 크기만큼 여백 */
+	margin-bottom: 60px; /* Footer 크기만큼 여백 */
+	padding: 20px;
+	overflow-y: auto;
+	height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 66px;
+  height: 30px;
+  line-height: 25px;
+  background-color: #fff;
+  border-radius: 15px;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+a.btn {
+  height: 28px;
+}
+
+.btn-primary {
+  border: 1px solid #00c3bd;
+  color: #00c3bd;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: #00c3bd;
+}
+
+.btn-secondary {
+  border: 1px solid #bbb;
+  color: #666;
+}
+.btn-secondary:hover {
+  color: white;
+  background-color: #bbb;
+}
+
+input, textarea {
+  border: 1px solid rgb(177, 175, 175);
+  padding: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  align-items: center;      /* 세로 중앙 정렬 */
+  height: 100%;
+}
+
+.nav-link{
+  padding: 20px;
+  font-size: 50px;
+  background-color: rgb(39, 71, 39);
+  color: white;
+  border: 10px solid rgb(185, 180, 180);
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.nav-link:hover {
+  background-color: rgb(12, 24, 12);
+  color: white;
+  border: 10px solid rgb(199, 195, 195);
+  border-radius: 5px;
+}
+
+.main-btn {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;  /* 가로 중앙 정렬 */
+  align-items: center;
+}
+
+
+/* 모든 form css */
+
+form {
+  border: 1px solid rgb(167, 167, 167);
+  padding: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  margin-top: -40px;
+  padding: 30px 40px 40px;
+  border-radius: 2px;
+  background-color: white;
+  margin-top: 100px;
+}
+
+.login-form > h2 {
+  padding: 20px;
+  font-size: 40px;
+}
+
+.login-form > p {
+  margin: 0;
+}
+.login-form > p > label {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 2px;
+  color: #333;
+}
+.login-form > p > label::after {
+  bottom: 0;
+  color: white;
+  content: ":";
+  position: absolute;
+  transform: translate(-100%, 0);
+}
+.login-form > p > input {
+  padding: 11px 0 10px 10px;
+  min-width: 250px;
+  outline: 0;
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.login-form > ul.errorlist {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.login-btn{
+  display: flex;
+  flex-direction: row;
+}
+
+.login-btn > button {
+  margin-right: 10px;
+  color: white;
+  background-color: rgb(75, 167, 75);
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-btn > a {
+  color: white;
+  background-color: royalblue;
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px;
+  height: 40px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -40px;
+  padding: 30px 40px 40px;
+  border-radius: 2px;
+  background-color: white;
+  margin-top: 100px;
+}
+
+.signup-form > h2 {
+  padding: 20px;
+  font-size: 40px;
+  align-items: center;
+}
+
+.signup-form > p {
+  margin: 0;
+}
+.signup-form > p > label {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 2px;
+  color: #333;
+}
+.signup-form > p > label::after {
+  bottom: 0;
+  color: white;
+  content: ":";
+  position: absolute;
+  transform: translate(-100%, 0);
+}
+.signup-form > p > input {
+  padding: 11px 0 10px 10px;
+  min-width: 250px;
+  outline: 0;
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.signup-form > ul.errorlist {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.signup-btn{
+  margin-right: 10px;
+  color: white;
+  background-color: rgb(75, 167, 75);
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-btn > a {
+  color: white;
+  background-color: royalblue;
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px;
+  height: 40px;
+}

@@ -1,0 +1,56 @@
+
+{% load static %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Recipe Chatbot</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% block extra-css %}
+            <link rel="stylesheet"  type="text/css" href="{% static 'css/common.css' %}">
+            
+        {% endblock %}
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="header-banner">
+                    <div>
+                        <h1><a href="{% url 'base' %}">Recipe Chat</a></h1>
+                    </div>
+    
+                    <!-- login 관련 메뉴 -->
+                    <div>
+                        <a href="{% url 'login' %}" class="fs-4 p-2 link-dark link-offset-2 link-underline link-underline-opacity-0" >Log in</a>
+                        <a href="{% url 'signup' %}" class="fs-4 link-dark link-offset-2 link-underline link-underline-opacity-0">Sign up</a>
+                    </div> 
+                </div>
+            </header>
+        </div>
+
+        <div class="container">
+            <main>
+                {% bootstrap_messages %}
+    
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+
+        <div class="container">
+            <footer class="d-flex justify-content-center pt-2 my-md-5 pt-md-5">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <small class="d-block mb-3 text-center text-muted">&copy; Copyright 2024. Simseulnyang All rights reserved.</small>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        {% block script %}{% endblock %}
+    </body>
+</html>
